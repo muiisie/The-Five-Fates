@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Five Fates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media_queries.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    <h1 class="game-title">🌟 The Five Fates 🌟</h1>
+
+    <div class="head">
+      <div class="settings">
+        <div class="streak" id="streak" title="Your Streak">Streak: 0</div>
+        <button class="reset-btn" title="Restart your game!" id="reset-btn">Try Again 🍃</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="contains">
+        <div class="scoreboard">
+          <p class="score-bg" title="Your score">
+            You: <span id="player-score">0</span>
+          </p>
+          <p class="score-bg rival-score" title="Opponent's score">
+            Rival: <span id="computer-score">0</span>
+          </p>
+        </div>
+        <div class="result">
+          <p class="message" id="round-result">Make your move to start the journey 🌸</p>
+        </div>
+        <div class="selected-img">
+          <div><img class="img-size" id="player-choice-img" src="images/rock.png" alt="Player Choice" /></div>
+          <div><img class="img-size" id="computer-choice-img" src="images/rock.png" alt="Computer Choice" /></div>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <div class="game-options">
+          <div class="option-wrapper">
+            <button class="option" data-option="rock" title="Rock">🪨</button>
+            <span class="option-label">Rock</span>
+          </div>
+          <div class="option-wrapper">
+            <button class="option" data-option="paper" title="Paper">🍃</button>
+            <span class="option-label">Paper</span>
+          </div>
+          <div class="option-wrapper">
+            <button class="option" data-option="scissors" title="Scissors">🦋</button>
+            <span class="option-label">Scissors</span>
+          </div>
+          <div class="option-wrapper">
+            <button class="option" data-option="lizard" title="Lizard">🦎</button>
+            <span class="option-label">Lizard</span>
+          </div>
+          <div class="option-wrapper">
+            <button class="option" data-option="spock" title="Spock">✨</button>
+            <span class="option-label">Spock</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎵 Background Music Controls -->
+      <div class="audio-controls" style="margin-top: 1.5rem; text-align: center;">
+        <button id="toggle-music" title="Toggle music" style="font-size: 1.5rem;">🎶</button>
+        <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.3" title="Volume" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset confirmation popup -->
+  <div id="reset-popup" class="popup hidden">
+    <div class="popup-content">
+      <p>Ready for a fresh start? 🍀</p>
+      <button id="confirm-reset">Yes, please!</button>
+      <button id="cancel-reset">No, thanks</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

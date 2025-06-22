@@ -1,0 +1,307 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Body Background & Layout */
+body {
+  background: url("images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #4b3b47;
+}
+
+/* Main Container */
+.main {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(82, 111, 102, 0.3);
+  width: 90%;
+  max-width: 640px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+/* Title */
+.game-title {
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #567d46;
+}
+
+/* Streak + Reset Controls */
+.settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.streak {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #567d46;
+  user-select: none;
+}
+
+.reset-btn {
+  background: #a8dadc;
+  color: #2b3a42;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px #a8dadc;
+  transition: background 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #76c7c0;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.score-bg {
+  background: #f1faee;
+  border-radius: 15px;
+  padding: 0.8rem 1.4rem;
+  box-shadow: 0 3px 10px #f1faee;
+  min-width: 90px;
+  color: #567d46;
+}
+
+/* Round Result Message */
+.message {
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  min-height: 3rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+  color: #4b3b47;
+}
+
+/* Player & Computer Images */
+.selected-img {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+.img-size {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(82, 111, 102, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Game Option Buttons */
+.game-options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.option-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-label {
+  font-family: "Caveat", cursive;
+  font-size: 1rem;
+  color: #567d46;
+  margin-top: 0.3rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.option {
+  font-size: 2.5rem;
+  background: #c4d6b0;
+  border: none;
+  border-radius: 15px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #c4d6b0;
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  color: #567d46;
+}
+
+.option:hover {
+  background: #a1b57d;
+  color: white;
+  transform: scale(1.1);
+}
+
+.option:active {
+  transform: scale(0.95);
+}
+
+/* Animation: Pulse */
+.pulse {
+  animation: pulseAnim 0.5s ease forwards;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #a1b57d;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Animation: Falling Star */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(150px) rotate(360deg);
+  }
+}
+
+.falling-star {
+  position: fixed;
+  top: -30px;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: fall 2s linear forwards;
+  user-select: none;
+  z-index: 1000;
+}
+
+/* Reset Confirmation Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(86, 125, 70, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  box-shadow: 0 5px 15px rgba(82, 111, 102, 0.7);
+  text-align: center;
+  font-size: 1.5rem;
+  color: #567d46;
+}
+
+.popup-content button {
+  margin: 1rem 1rem 0 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background: #a8dadc;
+  box-shadow: 0 5px 10px #a8dadc;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background: #76c7c0;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+/* Music Controls */
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+#toggle-music {
+  background: #f1faee;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(175, 200, 165, 0.5);
+  transition: background 0.3s ease;
+  color: #567d46;
+}
+
+#toggle-music:hover {
+  background: #a8dadc;
+}
+
+#music-volume {
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: #76c7c0;
+  outline: none;
+  transition: background 0.3s ease;
+  width: 80px;
+}
+
+#music-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4b3b47;
+  cursor: pointer;
+}
+
+#music-volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4b3b47;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
